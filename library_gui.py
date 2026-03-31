@@ -327,7 +327,6 @@ class lib_gui:
 
         borrowed_count = len(u.borrowed)
         overdue_count  = sum(1 for r in u.borrowed if r.overdue_fee() > 0)
-        # ── FIX 3 (GUI): show waitlist count in stat cards ───────────────────
         waitlist_count = len(u.waitlisted)
 
         self.make_stat_cards(content, [
@@ -454,7 +453,6 @@ class lib_gui:
                                 tags=(tag,))
         display()
 
-        # ── FIX 4 (GUI): borrow OR join waitlist ─────────────────────────────
         def borrow_or_waitlist():
             sel = tree.selection()
             if not sel:
@@ -476,7 +474,6 @@ class lib_gui:
                 messagebox.showinfo("Success", f"✅ Borrowed '{book.title}'!")
                 self.show_user_dashboard()
             else:
-                # ── FIX 4: offer waitlist instead of just showing error ───────
                 if u in book.waitlist:
                     pos = book.waitlist.index(u) + 1
                     messagebox.showinfo(
@@ -506,7 +503,6 @@ class lib_gui:
             ("📤  Borrow / Join Waitlist", borrow_or_waitlist, self.COLOR_SUCCESS, "#000"),
         ])
 
-    # ── FIX 3 (GUI): NEW — My Waitlist screen ────────────────────────────────
     def show_user_waitlist(self):
         self.clear_window()
         self.make_navbar("⏳  My Waitlist", back_cmd=self.show_user_dashboard)
