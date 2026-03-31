@@ -443,9 +443,9 @@ class User(Person):
     def return_book(self, book_id):
         """Return a borrowed book. After restoring availability, check the waitlist:
         - Remove the first waiting user from the list
-        - Clean up their DB waitlist row                  (FIX 2)
-        - Re-number remaining waitlist positions in DB    (FIX 2)
-        - Auto-create a BorrowRecord for them             (FIX 1)
+        - Clean up their DB waitlist row                  
+        - Re-number remaining waitlist positions in DB    
+        - Auto-create a BorrowRecord for them            
         """
         record = next((r for r in self.borrowed if r.book_id == book_id), None)
         if not record:
