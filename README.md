@@ -6,6 +6,6 @@
 
 **library_gui.py** is simply a graphical demonstration of the program in action. It serves as a visual frontend that calls the backend logic from library.py, and is not the primary file for grading purposes.
 
-Requirements: Install the mysql-connector-python dependency by running **"pip install mysql-connector-python"** in your terminal. Then open the XAMPP Control Panel and click Admin next to MySQL. Next, run either "library.py" for the console version or "library_gui.py" for the GUI version. The database library_db and all its tables are automatically created on first run — no manual database setup is needed.
+**Requirements:** Install the mysql-connector-python dependency by running **"pip install mysql-connector-python"** in your terminal. Then open the XAMPP Control Panel and click Admin next to MySQL. Next, run either "library.py" for the console version or "library_gui.py" for the GUI version. The database library_db and all its tables are automatically created on first run — no manual database setup is needed.
 
 **Default Credentials:** The default admin account has the username** "admin" **and password** "123"**. Regular users can register their own accounts directly from the login screen.
